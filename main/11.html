@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Secular+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=desert"></script>
+
+
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../item.css">
+    <script src="main.js"></script>
+    <meta charset="utf-8">
+    <title>default</title>
+  </head>
+  <body>
+
+    <header>
+      <a href="#"><h2 id="header-title">hello world</h2></a>
+      <!--<ul>
+        <li><a href="#">hello</a></li>
+        <li><a href="#">world</a></li>
+      </ul>-->
+    </header>
+
+
+    <div id="main">
+      <div id="side" class="side section">
+        <a href="../index.html"><p>home</p></a>
+        <a href="../main/0.html"><p>基本</p></a>
+        <a href="../main/1.html"><p>計算</p></a>
+        <a href="../main/2.html"><p>基本的な機能</p></a>
+        <a href="../main/3.html"><p>基本的な機能2</p></a>
+        <a href="../main/4.html"><p>変数</p></a>
+        <a href="../main/5.html"><p>ループ</p></a>
+        <a href="../main/6.html"><p>for文</p></a>
+        <a href="../main/7.html"><p>if文</p></a>
+        <a href="../main/8.html"><p>関数</p></a>
+        <a href="../main/9.html"><p>描写</p></a>
+        <a href="../main/10.html"><p>アニメーション</p></a>
+        <a href="../main/11.html" id="now"><p>サンプル</p></a>
+        <a href="../main/12.html"><p>機能の追加方法</p></a>
+        <a href="../main/13.html"><p>あとがき</p></a>
+      </div>
+      <!---->
+
+    <!---->
+      <div id="main- side2" class="side section">
+        <div id="main--">
+          <h1>サンプル</h1>
+          <h2>グラデーション コメ有り</h2>
+          <div class="code" style="width: 1200px">
+            <pre><code class="prettyprint linenums">
+loop:: //無限ループ
+first::  //最初だけ実行
+    let(r,random(0,255))  //rをランダムに生成する
+    let(g,random(0,255))  //gをランダムに生成する
+    let(b,random(0,255))  //bをランダムに生成する
+    let(r2,random(0,255))  //r2をランダムに生成する
+    let(g2,random(0,255))  //r2をランダムに生成する
+    let(b2,random(0,255))  //r2をランダムに生成する
+    let(n,15)  //nを15にする
+    let(auto_n,1) //fpsの自動調整をoffにする
+    let(auto_n_u,10)  //fpsの自動調整の初期値
+    
+pen.erase()  //すべて消す
+move(0-240,180)  //-240の180に移動する
+pen.size(1*let(n)*1.5)  //ペンのサイズを変える
+for(i,(480/let(n))+2)  //480/n+2回繰り返す (グラデーションの描写)
+    move.y(180)  //y座標を180にする
+    let(d,(my.position.x(null)+240)/480)  //グラデーションの位置を求める (座標によって変わる)
+    let(r3,(floor(((let(r2)-let(r))*let(d))+let(r))))  //位置をもとに色を決める
+    let(g3,(floor(((let(g2)-let(g))*let(d))+let(g))))  //位置をもとに色を決める
+    let(b3,(floor(((let(b2)-let(b))*let(d))+let(b))))  //位置をもとに色を決める
+    pen.color(and(#,hex.color(let(r3)),hex.color(let(g3)),hex.color(let(b3))))  //ペンの色を変える
+    pen.down()  //ペンをおろす
+    move.change.y(0-360)  //y座標を変える
+    pen.up() //ペンを上げる
+    move.change.x(1*let(n)) //x座標を変える
+if(100,&lt;,mouse(y)) //mouseのy座標が100を超えたときに実行する (設定画面の描写)
+    let(input_color1,and(#,hex.color(let(r)),hex.color(let(g)),hex.color(let(b))))  //inputを描画するときに使用する色の定義
+    let(input_color2,and(#,hex.color(let(r2)),hex.color(let(g2)),hex.color(let(b2))))  //同じく
+    draw.input(1,0-220+100,160,0-120+100,10,255,input_r,let(input_color1),let(input_color2),null)  //inputの描写
+    draw.input(1,0-100+100,160,0+100,10,255,input_g,let(input_color1),let(input_color2),#null)  //inputの描写
+    draw.input(1,20+100,160,120+100,10,255,input_b,let(input_color1),let(input_color2),#null)  //inputの描写
+    draw.input(1,0-220,135,0-120,10,255,input_r2,let(input_color1),let(input_color2),#null)  //inputの描写
+    draw.input(1,0-100,135,0,10,255,input_g2,let(input_color1),let(input_color2),#null)  //inputの描写
+    draw.input(1,20,135,120,10,255,input_b2,let(input_color1),let(input_color2),#null)  //inputの描写
+    draw.input(1,0-220,110,0-120,10,100,input_n,let(input_color1),let(input_color2),#null)  //inputの描写
+    draw.text(0-220,167,3,0x000000,and(#,hex.color(let(r)),hex.color(let(g)),hex.color(let(b))),1)  //今の値の表示(input)
+    draw.text(140,142,3,0x000000,and(#,hex.color(let(r2)),hex.color(let(g2)),hex.color(let(b2))),1)  //今の値の表示(input)
+    draw.text(0-120,164,1.5,0x000000,and(r:,floor(let(r))),0.6)  //今の値の表示(input)
+    draw.text(0,164,1.5,0x000000,and(g:,floor(let(g))),0.6)  //今の値の表示(input)
+    draw.text(120,164,1.5,0x000000,and(b:,floor(let(b))),0.6)  //今の値の表示(input)
+    draw.text(0-220,164-25,1.5,0x000000,and(r:,floor(let(r2))),0.6)  //今の値の表示(input)
+    draw.text(0-100,164-25,1.5,0x000000,and(g:,floor(let(g2))),0.6)  //今の値の表示(input)
+    draw.text(20,164-25,1.5,0x000000,and(b:,floor(let(b2))),0.6)  //今の値の表示(input)
+    draw.text(0-220,164-50,1.5,0x000000,and(n:,floor(let(n))),0.6)  //今の値の表示(input)
+    draw.text(0-100,164-50,1.5,0x000000,and(auto fps,:),0.6)  //今の値の表示(input)
+    draw.input(2,0-20,110,#,15,#,input_auto_n,let(input_color2),let(input_color1),let(input_color2),#)  //inputの描写
+    draw.input(1,20,110,120,10,60,input_auto_n_u,let(input_color1),let(input_color2),#null)  //inputの描写
+    draw.text(20,164-50,1.5,0x000000,and(auto fps:,floor(let(auto_n_u))),0.6)  //今の値の表示(input)
+first::  //最初にinputの値を変更する(そうしないと最初に色が0になる)
+    draw.input.set(2,input_r,let(r))  //input rをlet 3にする
+    draw.input.set(2,input_g,let(g))  //同じく
+    draw.input.set(2,input_b,let(b))  //同じく
+    draw.input.set(2,input_r2,let(r2))  //同じく
+    draw.input.set(2,input_g2,let(g2))  //同じく
+    draw.input.set(2,input_b2,let(b2))  //同じく
+    draw.input.set(2,input_n,let(n))  //同じく
+    draw.input.set(2,input_auto_n_u,let(auto_n_u))  //同じく
+let(r,input(input_r))  //次からはlet r をinput rにする
+let(g,input(input_g))  //同じく
+let(b,input(input_b))  //同じく
+let(r2,input(input_r2))  //同じく
+let(g2,input(input_g2))  //同じく
+let(b2,input(input_b2))  //同じく
+let(auto_n_u,input(input_auto_n_u))  //同じく
+if(let(auto_n),=,0)  //autonが1の場合実行する
+    let(n,input(input_n))  //let nをinputにする
+
+
+if(100,&gt;,mouse(y)) //mouseのy座標が100未満に実行する(設定画面が表示されてない時のmouseに付きまとうrgnを表示するやつ)
+    let(d,(mouse(x)+240)/480)  //mouseのx座標から割合を求める
+    let(r3,(floor(((let(r2)-let(r))*let(d))+let(r))))  //割合からrを求める
+    let(g3,(floor(((let(g2)-let(g))*let(d))+let(g))))  //割合からgを求める
+    let(b3,(floor(((let(b2)-let(b))*let(d))+let(b))))  //割合からbを求める
+    if(120,&gt;,mouse(x))  //普通の時(マウスのx座標が120未満んの時)
+        draw.text(mouse(x),mouse(y),1.5,#000,and(#,hex.color(let(r3)),hex.color(let(g3)),hex.color(let(b3))),1)  //hexを表示する
+        draw.text(mouse(x)+0,mouse(y)-20,0.8,#000,and(r:,let(r3)),0.6)  //rを表示する
+        draw.text(mouse(x)+40,mouse(y)-20,0.8,#000,and(g:,let(g3)),0.6)  //gを表示する
+        draw.text(mouse(x)+80,mouse(y)-20,0.8,#000,and(b:,let(b3)),0.6)  //bを表示する
+    if(120,&lt;,mouse(x))  //マウスのx座標が120以上に時にツールチップ?がはみ出さないようにするため
+        draw.text(mouse(x)-110,mouse(y),1.5,#000,and(#,hex.color(let(r3)),hex.color(let(g3)),hex.color(let(b3))),1)
+        draw.text(mouse(x)+0-110,mouse(y)-20,0.8,#000,and(r:,let(r3)),0.6)  //rを表示する
+        draw.text(mouse(x)+40-110,mouse(y)-20,0.8,#000,and(g:,let(g3)),0.6)  //gを表示する
+        draw.text(mouse(x)+80-110,mouse(y)-20,0.8,#000,and(b:,let(b3)),0.6)  //bを表示する
+    
+    if(key.pressed(right arrow),=,false)  //連続で実行されないように押されてない時に変数に押されてない事を保存する
+        let(right_color,true)  //押されてないことを保存する
+    if(let(right_color),=,true)  //もし押されてなかったら実行する
+        if(key.pressed(right arrow),=,true) //もし前に押されていないかつ今押されているなら
+            draw.input.set(2,input_r2,let(r3))  //r2にmouseの位置の色を代入する
+            draw.input.set(2,input_g2,let(g3))  //g2にmouseの位置の色を代入する
+            draw.input.set(2,input_b2,let(b3))  //b2にmouseの位置の色を代入する
+            let(right_color,false)  //押されていることを保存する
+    if(key.pressed(left arrow),=,false)  //上は右これは左
+        let(left_color,true)
+    if(let(left_color),=,true)
+        if(key.pressed(left arrow),=,true)
+            draw.input.set(2,input_r,let(r3))
+            draw.input.set(2,input_g,let(g3))
+            draw.input.set(2,input_b,let(b3))
+            let(left_color,false)
+    if(key.pressed(space),=,false)  //上と同じ
+        let(random_color,true)
+    if(let(random_color),=,true)
+        if(key.pressed(space),=,true)//space keyが押されたときに実行する
+            draw.input.set(2,input_r,random(0,255))  //rをランダムに決める以下はg,b,r2,g2,b2をランダムに決めてる
+            draw.input.set(2,input_g,random(0,255))
+            draw.input.set(2,input_b,random(0,255))
+            draw.input.set(2,input_r2,random(0,255))
+            draw.input.set(2,input_g2,random(0,255))
+            draw.input.set(2,input_b2,random(0,255))
+            let(random_color,false)
+
+if(%(input(input_auto_n),2),=,1)  //input2は累計で保存するため2で割った時のあまりで判断する(あまりが1の時)
+    let(auto_n,0)  //auto fpsをoffにする
+if(%(input(input_auto_n),2),=,0) //input2は累計で保存するため2で割った時のあまりで判断する(あまりが0の時)
+    let(auto_n,1)  //auto fpsをonにする
+
+if(let(auto_n),=,1)  //auto fpsをonにする
+    if(abs(fps(#)-let(auto_n_u)),&gt;,3)  //もし基準と3以上違うなら実行する
+        if(timer(#),&gt;,1)  //前に実行した時より1秒以上経ってることを確認する(fpsの更新が1秒に1回の為)
+            if(fps(#),&lt;,let(auto_n_u)) //fpsが基準値より低い場合
+                let(n,let(n)+1)  //解像度を下げる
+                if(fps(#)+10,&lt;,let(auto_n_u)) //10以上違う場合は、一気に下げる
+                    let(n,let(n)+10)  //一気に下げる
+                timer.reset(#)  //タイマーをリセットする
+            if(fps(#),&gt;,let(auto_n_u))  //基準値より高い場合
+                if(let(n),&gt;,1)  //解像度が1以上の時に、実行する(0だとバグる(480/0はinfinityになるため))
+                    let(n,let(n)-1)  //解像度を上げる
+                    timer.reset(#)  //タイマーをリセットする
+            </code></pre>
+          </div>
+
+
+          <h2>グラデーション コメなし</h2>
+          <div class="code" style="width: 1200px">
+            <pre><code class="prettyprint linenums">
+loop::
+first::
+    let(r,random(0,255))
+    let(g,random(0,255))
+    let(b,random(0,255))
+    let(r2,random(0,255))
+    let(g2,random(0,255))
+    let(b2,random(0,255))
+    let(n,15)
+    let(auto_n,1)
+    let(auto_n_u,10)
+    
+pen.erase()
+move(0-240,180)
+pen.size(1*let(n)*1.5)
+for(i,(480/let(n))+2)
+    move.y(180)
+    let(d,(my.position.x(null)+240)/480)
+    let(r3,(floor(((let(r2)-let(r))*let(d))+let(r))))
+    let(g3,(floor(((let(g2)-let(g))*let(d))+let(g))))
+    let(b3,(floor(((let(b2)-let(b))*let(d))+let(b))))
+    pen.color(and(#,hex.color(let(r3)),hex.color(let(g3)),hex.color(let(b3))))
+    pen.down()
+    move.change.y(0-360)
+    pen.up()
+    move.change.x(1*let(n))
+if(100,&lt;,mouse(y))
+    let(input_color1,and(#,hex.color(let(r)),hex.color(let(g)),hex.color(let(b))))
+    let(input_color2,and(#,hex.color(let(r2)),hex.color(let(g2)),hex.color(let(b2))))
+    draw.input(1,0-220+100,160,0-120+100,10,255,input_r,let(input_color1),let(input_color2),null)
+    draw.input(1,0-100+100,160,0+100,10,255,input_g,let(input_color1),let(input_color2),#null)
+    draw.input(1,20+100,160,120+100,10,255,input_b,let(input_color1),let(input_color2),#null)
+    draw.input(1,0-220,135,0-120,10,255,input_r2,let(input_color1),let(input_color2),#null)
+    draw.input(1,0-100,135,0,10,255,input_g2,let(input_color1),let(input_color2),#null)
+    draw.input(1,20,135,120,10,255,input_b2,let(input_color1),let(input_color2),#null)
+    draw.input(1,0-220,110,0-120,10,100,input_n,let(input_color1),let(input_color2),#null)
+    draw.text(0-220,167,3,0x000000,and(#,hex.color(let(r)),hex.color(let(g)),hex.color(let(b))),1)
+    draw.text(140,142,3,0x000000,and(#,hex.color(let(r2)),hex.color(let(g2)),hex.color(let(b2))),1)
+    draw.text(0-120,164,1.5,0x000000,and(r:,floor(let(r))),0.6)
+    draw.text(0,164,1.5,0x000000,and(g:,floor(let(g))),0.6)
+    draw.text(120,164,1.5,0x000000,and(b:,floor(let(b))),0.6)
+    draw.text(0-220,164-25,1.5,0x000000,and(r:,floor(let(r2))),0.6)
+    draw.text(0-100,164-25,1.5,0x000000,and(g:,floor(let(g2))),0.6)
+    draw.text(20,164-25,1.5,0x000000,and(b:,floor(let(b2))),0.6)
+    draw.text(0-220,164-50,1.5,0x000000,and(n:,floor(let(n))),0.6)
+    draw.text(0-100,164-50,1.5,0x000000,and(auto fps,:),0.6)
+    draw.input(2,0-20,110,#,15,#,input_auto_n,let(input_color2),let(input_color1),let(input_color2),#)
+    draw.input(1,20,110,120,10,60,input_auto_n_u,let(input_color1),let(input_color2),#null)
+    draw.text(20,164-50,1.5,0x000000,and(auto fps:,floor(let(auto_n_u))),0.6)
+first::
+    draw.input.set(2,input_r,let(r))
+    draw.input.set(2,input_g,let(g))
+    draw.input.set(2,input_b,let(b))
+    draw.input.set(2,input_r2,let(r2))
+    draw.input.set(2,input_g2,let(g2))
+    draw.input.set(2,input_b2,let(b2))
+    draw.input.set(2,input_n,let(n))
+    draw.input.set(2,input_auto_n_u,let(auto_n_u))
+let(r,input(input_r))
+let(g,input(input_g))
+let(b,input(input_b))
+let(r2,input(input_r2))
+let(g2,input(input_g2))
+let(b2,input(input_b2))
+let(auto_n_u,input(input_auto_n_u))
+if(let(auto_n),=,0)
+    let(n,input(input_n))
+
+
+if(100,&gt;,mouse(y))
+    let(d,(mouse(x)+240)/480)
+    let(r3,(floor(((let(r2)-let(r))*let(d))+let(r))))
+    let(g3,(floor(((let(g2)-let(g))*let(d))+let(g))))
+    let(b3,(floor(((let(b2)-let(b))*let(d))+let(b))))
+    if(120,&gt;,mouse(x))
+        draw.text(mouse(x),mouse(y),1.5,#000,and(#,hex.color(let(r3)),hex.color(let(g3)),hex.color(let(b3))),1)
+        draw.text(mouse(x)+0,mouse(y)-20,0.8,#000,and(r:,let(r3)),0.6)
+        draw.text(mouse(x)+40,mouse(y)-20,0.8,#000,and(g:,let(g3)),0.6)
+        draw.text(mouse(x)+80,mouse(y)-20,0.8,#000,and(b:,let(b3)),0.6)
+    if(120,&lt;,mouse(x))
+        draw.text(mouse(x)-110,mouse(y),1.5,#000,and(#,hex.color(let(r3)),hex.color(let(g3)),hex.color(let(b3))),1)
+        draw.text(mouse(x)+0-110,mouse(y)-20,0.8,#000,and(r:,let(r3)),0.6)
+        draw.text(mouse(x)+40-110,mouse(y)-20,0.8,#000,and(g:,let(g3)),0.6)
+        draw.text(mouse(x)+80-110,mouse(y)-20,0.8,#000,and(b:,let(b3)),0.6)
+    
+    if(key.pressed(right arrow),=,false)
+        let(right_color,true)
+    if(let(right_color),=,true)
+        if(key.pressed(right arrow),=,true)
+            draw.input.set(2,input_r2,let(r3))
+            draw.input.set(2,input_g2,let(g3))
+            draw.input.set(2,input_b2,let(b3))
+            let(right_color,false)
+    if(key.pressed(left arrow),=,false)
+        let(left_color,true)
+    if(let(left_color),=,true)
+        if(key.pressed(left arrow),=,true)
+            draw.input.set(2,input_r,let(r3))
+            draw.input.set(2,input_g,let(g3))
+            draw.input.set(2,input_b,let(b3))
+            let(left_color,false)
+    if(key.pressed(space),=,false)
+        let(random_color,true)
+    if(let(random_color),=,true)
+        if(key.pressed(space),=,true)
+            draw.input.set(2,input_r,random(0,255))
+            draw.input.set(2,input_g,random(0,255))
+            draw.input.set(2,input_b,random(0,255))
+            draw.input.set(2,input_r2,random(0,255))
+            draw.input.set(2,input_g2,random(0,255))
+            draw.input.set(2,input_b2,random(0,255))
+            let(random_color,false)
+
+if(%(input(input_auto_n),2),=,1)
+    let(auto_n,0)
+if(%(input(input_auto_n),2),=,0)
+    let(auto_n,1)
+
+if(let(auto_n),=,1)
+    if(abs(fps(#)-let(auto_n_u)),&gt;,3)
+        if(timer(#),&gt;,1)
+            if(fps(#),&lt;,let(auto_n_u))
+                let(n,let(n)+1)
+                if(fps(#)+10,&lt;,let(auto_n_u))
+                    let(n,let(n)+10)
+                timer.reset(#)
+            if(fps(#),&gt;,let(auto_n_u))
+                if(let(n),&gt;,1)
+                    let(n,let(n)-1)
+                    timer.reset(#)
+            </code></pre>
+          </div>
+
+          <h3>時計 コメ有り</h3>
+          <div class="code" style="width: 1200px">
+            <pre><code class="prettyprint linenums">
+loop::  //無限ループ
+pen.erase()  //すべて消す
+draw.fill(150,155,0-225,90,1,0x2d334a,10)  //紺色?の背景
+draw.fill(225,70,0-225,0-80,1,0x2d334a,10)  //同じく
+draw.fill(225,0-100,0-75,0-160,1,0x2d334a,10)  //同じく
+draw.progressbar(50,150,1,0x272343,0xffd803,10,59,time(s),2) //秒のプログレスバー
+if(len(time(s)),=,1)  //常に真ん中に表示するために長さで分けてる
+    draw.text(140,15,5,0xffd803,time(s),3)//秒の表示
+if(len(time(s)),=,2)
+    draw.text(120,15,5,0xffd803,time(s),3) //秒の表示
+draw.progressbar(50,0,1,0x272343,0xffd803,10,59,time(mi),2) //分のプログレスバー
+if(len(time(mi)),=,1)
+    draw.text(0-10,15,5,0xffd803,time(mi),3)  //分の表示
+if(len(time(mi)),=,2)
+    draw.text(0-30,15,5,0xffd803,time(mi),3)  //分の表示
+draw.progressbar(50,0-150,1,0x272343,0xffd803,10,23,time(h),2)  //時のプログレスバー
+if(len(time(h)),=,1)
+    draw.text(0-160,15,5,0xffd803,time(h),3)  //時の表示
+if(len(time(h)),=,2)
+    draw.text(0-180,15,5,0xffd803,time(h),3) //時の表示
+draw.text(0-210,145,3,0xffd803,and(time(y), ,time(m), ,time(d)),3)  //年　月　日の表示
+draw.text(0-60,0-105,3,0xffd803,and(time(h), ,time(mi), ,time(s)),3)  //時　分　秒の表示
+            </code></pre>
+          </div>
+          <h3>時計　コメ無し</h3>
+          <p>if文が省略可能なことに気が付いたので省略してあります</p>
+          <div class="code" style="width: 1200px">
+            <pre><code class="prettyprint linenums">
+loop::
+pen.erase()
+draw.fill(150,155,0-225,90,1,0x2d334a,10)
+draw.fill(225,70,0-225,0-80,1,0x2d334a,10)
+draw.fill(225,0-100,0-75,0-160,1,0x2d334a,10)
+draw.progressbar(50,150,1,0x272343,0xffd803,10,59,time(s),2)
+draw.text(140-((len(time(s))-1)*20),15,5,0xffd803,time(s),3)
+draw.progressbar(50,0,1,0x272343,0xffd803,10,59,time(mi),2)
+draw.text(0-10-((len(time(mi))-1)*20),15,5,0xffd803,time(mi),3)
+draw.progressbar(50,0-150,1,0x272343,0xffd803,10,23,time(h),2)
+draw.text(0-160-((len(time(h))-1)*20),15,5,0xffd803,time(h),3)
+draw.text(0-210,145,3,0xffd803,and(time(y), ,time(m), ,time(d)),3)
+draw.text(0-60,0-105,3,0xffd803,and(time(h), ,time(mi), ,time(s)),3)
+            </code></pre>
+          </div>
+
+          <h3>アニメーションする時計 コメ無し</h3>
+          <p>"volume(0)"を使用するのは、animationの間に1frameの遅延が必要だから</p>
+          <p>(volumeが遅延できる唯一?の物だから</p>
+          <div class="code" style="width: 1200px">
+            <pre><code class="prettyprint linenums">
+loop::
+pen.erase()
+
+first::
+    let(animation_h_m,0)
+    let(animation_h_d,0)
+    let(animation_h_h,0)
+    let(animation_h_mi,0)
+    let(animation_h_s,0)
+    let(animation_data_y,time(y))
+    animation(5000,l.(animation_data_y),animation_y,13,#,1)
+    volume(0)
+    animation(500,50,animation_y_y,easeOut,3,2)
+    volume(0)
+    animation(300,255,animation_o_y,easeOut,3,3)
+
+if(a.(animation_y),&gt;,let(animation_data_y)/2)
+    if(let(animation_h_m),=,0)
+        let(animation_h_m,1)
+        let(animation_data_m,time(m))
+        animation(5000,l.(animation_data_m),animation_m,13,#,4)
+        volume(0)
+        animation(500,100,animation_y_m,easeOut,3,5)
+        volume(0)
+        animation(300,255,animation_o_m,easeOut,3,6)
+    if(l.(animation_data_m),!=,a.(animation_m))
+        draw.text.v2(0-180+100,0-100+a.(animation_y_m),1,and(0x,hex.color(a.(animation_o_m)),000000),floor(a.(animation_m)),3)
+    if(l.(animation_data_m),=,a.(animation_m))
+        draw.text.v2(0-180+100,0,1,#000,time(m),3)
+
+if(let(animation_h_m),=,1)
+    if(a.(animation_m),&gt;,let(animation_data_m)/2)
+        if(let(animation_h_d),=,0)
+            let(animation_h_d,1)
+            let(animation_data_d,time(d))
+            animation(5000,l.(animation_data_d),animation_d,13,#,7)
+            volume(0)
+            animation(500,100,animation_y_d,easeOut,3,8)
+            volume(0)
+            animation(300,255,animation_o_d,easeOut,3,9)
+        if(l.(animation_data_d),!=,a.(animation_d))
+            draw.text.v2(0-140+100,0-100+a.(animation_y_d),1,and(0x,hex.color(a.(animation_o_d)),000000),floor(a.(animation_d)),3)
+        if(l.(animation_data_d),=,a.(animation_d))
+            draw.text.v2(0-140+100,0,1,#000,time(d),3)
+            
+if(let(animation_h_d),=,1)
+    if(a.(animation_d),&gt;,let(animation_data_d)/2)
+        if(let(animation_h_h),=,0)
+            let(animation_h_h,1)
+            let(animation_data_h,time(h))
+            animation(5000,l.(animation_data_h),animation_h,13,#,10)
+            volume(0)
+            animation(500,100,animation_y_h,easeOut,3,11)
+            volume(0)
+            animation(300,255,animation_o_h,easeOut,3,12)
+        if(l.(animation_data_h),!=,a.(animation_h))
+            draw.text.v2(0-100+100,0-100+a.(animation_y_h),1,and(0x,hex.color(a.(animation_o_h)),000000),floor(a.(animation_h)),3)
+        if(l.(animation_data_h),=,a.(animation_h))
+            draw.text.v2(0-100+100,0,1,#000,time(d),3)
+
+if(let(animation_h_h),=,1)
+    if(a.(animation_h),&gt;,let(animation_data_h)/2)
+        if(let(animation_h_mi),=,0)
+            let(animation_h_mi,1)
+            let(animation_data_mi,time(mi))
+            animation(5000,l.(animation_data_mi),animation_mi,13,#,13)
+            volume(0)
+            animation(500,100,animation_y_mi,easeOut,3,14)
+            volume(0)
+            animation(300,255,animation_o_mi,easeOut,3,15)
+        if(l.(animation_data_mi),!=,a.(animation_mi))
+            draw.text.v2(0-60+100,0-100+a.(animation_y_mi),1,and(0x,hex.color(a.(animation_o_mi)),000000),floor(a.(animation_mi)),3)
+        if(l.(animation_data_mi),=,a.(animation_mi))
+            draw.text.v2(0-60+100,0,1,#000,time(mi),3)
+
+if(let(animation_h_mi),=,1)
+    if(a.(animation_mi),&gt;,let(animation_data_mi)/2)
+        if(let(animation_h_s),=,0)
+            let(animation_h_s,1)
+            let(animation_data_s,time(s)+5)
+            animation(5000,l.(animation_data_s),animation_s,13,#,16)
+            volume(0)
+            animation(500,100,animation_y_s,easeOut,3,17)
+            volume(0)
+            animation(300,255,animation_o_s,easeOut,3,18)
+        if(l.(animation_data_s),!=,a.(animation_s))
+            draw.text.v2(0-20+100,0-100+a.(animation_y_s),1,and(0x,hex.color(a.(animation_o_s)),000000),floor(a.(animation_s)),3)
+        if(l.(animation_data_s),=,a.(animation_s))
+            draw.text.v2(0-20+100,0,1,#000,time(s),3)
+
+
+if(l.(animation_data_y),!=,a.(animation_y))
+    draw.text.v2(0-240+100,0-50+a.(animation_y_y),1,and(0x,hex.color(a.(animation_o_y)),000000),floor(a.(animation_y)),3)
+if(l.(animation_data_y),=,a.(animation_y))
+    draw.text.v2(0-240+100,0,1,0x000,time(y),3)
+            </code></pre>
+          </div>
+
+        </div>
+      </div>
+
+      <!--
+      <div>
+        <label for="acd-check--1" class="acd-label-">aaa
+          <input type="checkbox" class="acd-check-" id="acd-check--1">
+          <ul>
+            <li>aaaaa</li>
+            <li>aaaaa</li>
+          </ul>
+        </label>
+      </div>
+      -->
+
+    </div>
+
+  </body>
+</html>

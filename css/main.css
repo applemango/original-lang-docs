@@ -1,0 +1,14 @@
+#main-- {
+    margin: 30px;
+}
+#main-- ul {
+    padding-left: 18px;
+}
+
+#main-- > ul > li:nth-child(6) {
+    list-style: none;
+}
+
+#main-- > ol {
+    padding-left: 18px;
+}

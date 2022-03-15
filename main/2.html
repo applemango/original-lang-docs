@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Secular+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=desert"></script>
+
+
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../item.css">
+    <script src="main.js"></script>
+    <meta charset="utf-8">
+    <title>default</title>
+  </head>
+  <body>
+
+    <header>
+      <a href="#"><h2 id="header-title">hello world</h2></a>
+      <!--<ul>
+        <li><a href="#">hello</a></li>
+        <li><a href="#">world</a></li>
+      </ul>-->
+    </header>
+
+
+    <div id="main">
+      <div id="side" class="side section">
+        <a href="../index.html"><p>home</p></a>
+        <a href="../main/0.html"><p>基本</p></a>
+        <a href="../main/1.html"><p>計算</p></a>
+        <a href="../main/2.html" id="now"><p>基本的な機能</p></a>
+        <a href="../main/3.html"><p>基本的な機能2</p></a>
+        <a href="../main/4.html"><p>変数</p></a>
+        <a href="../main/5.html"><p>ループ</p></a>
+        <a href="../main/6.html"><p>for文</p></a>
+        <a href="../main/7.html"><p>if文</p></a>
+        <a href="../main/8.html"><p>関数</p></a>
+        <a href="../main/9.html"><p>描写</p></a>
+        <a href="../main/10.html"><p>アニメーション</p></a>
+        <a href="../main/11.html"><p>サンプル</p></a>
+        <a href="../main/12.html"><p>機能の追加方法</p></a>
+        <a href="../main/13.html"><p>あとがき</p></a>
+      </div>
+      <!---->
+
+    <!---->
+      <div id="main- side2" class="side section">
+        <div id="main--">
+          <h1>基本的な機能</h1>
+          <p>これを見るより[関数:code3]を見た方が多分早い</p>
+
+
+
+          <h3>関数リスト</h3>
+          <p>
+            valueに入力されている物は入力するデータのタイプや説明です実際に
+            使用する際は、適切な値に変えてください
+            <br>"//"はコメントです使用する際は除去してください
+          </p>
+          <p>
+            n:数字<br>
+            x:x座標<br>
+            y:y座標<br>
+            ~:値の範囲<br>
+            text:文字<br>
+            color:色
+          </p>
+          <div class="code" style="width: 450px">
+            <pre><code class="prettyprint linenums">
+move.steps(n)    //向いてる方向に進む
+move.turn.right(n) //向きを変える
+move.turn.left(n) //向きを変える
+move.glide.mouse(n)  //mouseの位置に行く
+move.glide.random(n) //randomな位置に行く
+move.glide(x,y,n) //n秒でx,yに行く
+move.direction(n) //n度に向ける
+move.direction.mouse() //mouseの方向に向ける
+move(x,y) //x,yに行く
+move.x(x) //xに行く
+move.y(y)  //yに行く
+move.change.x(x)  //x座標を変える
+move.change.y(y) //y座標を変える
+warp.random() //ランダムな位置に行く
+warp.mouse() //mouseの位置に行く
+move.bounce()  //もし端についたら跳ね返る
+move.bounce.type(1~3) //回転方法
+
+say(text) //textと言う
+say.time(text,n) //textとn秒言う
+show() //表示する
+hide()  //隠す
+
+sound.done(text)  //textの音を鳴らす
+//defaultでは、音は入っていない
+sound(text) //textの音を鳴らす
+sound.stop() //すべての音を止める
+volume.change(n) //音量を変える
+volume(n) //音量お変える
+
+timer.reset() //timerをリセットする
+
+pen.erase()  //ペンを消す
+pen.up() //ペンを上げる
+pen.down() //ペンを上げる
+pen.size(n) //ペンのサイズを変える
+pen.change.size(n) //ペンのサイズを変える
+pen.color(color)  //ペンの色を変える
+pen.change.color(n)  //ペンの色を変える
+pen.change.saturation(n)  //ペンの鮮やかさを変える
+pen.change.brightness(n)  //ペンの明るさを変える
+pen.change.transparency(n)  //ペンの透明度を変える
+pen.saturation(n)  //ペンの鮮やかさを変える
+pen.brightness(n)  //ペンの明るさを変える
+pen.transparency(n)  //ペンの透明度を変える
+
+wait(n) //n秒待つ
+stop()  //すべてを止める
+
+//その他 (後で説明
+if(data,type,data)
+for(i,n)
+let(text,data)
+function(data)
+hitbox()
+
+draw.input()
+draw.input.set()
+draw.box()
+draw.btn()
+draw.fill()
+draw.graph()
+draw.text()
+draw.text.easy()
+draw.progressbar()
+draw.stick()
+draw.gradation()
+draw.text.v2()
+draw.text.v2.easy()
+animation()
+animation.wait() //動作しない
+            </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!--
+      <div>
+        <label for="acd-check--1" class="acd-label-">aaa
+          <input type="checkbox" class="acd-check-" id="acd-check--1">
+          <ul>
+            <li>aaaaa</li>
+            <li>aaaaa</li>
+          </ul>
+        </label>
+      </div>
+      -->
+
+    </div>
+
+  </body>
+</html>
