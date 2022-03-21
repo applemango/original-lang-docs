@@ -67,19 +67,19 @@
           </div>
 
           <h3>ボタン</h3>
-          <div class="code" style="width: 1300px;">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.btn(0,30,0,15,#000,#000,#000,test,hello,#fff,1,#fff,#fff)
 //draw.btn(x,x2,y,size,color,color:hover,color:click,id,text,textcolor,color:hover,color:click)
 //(x / x2 / y) (pen-size) (color1-normal / color2-hover / color3-clock) (id) (text) (text-color-normal) (text-size) (text-color-hover / text-color-click)</code></pre>
           </div>
 
           <h5>ボタンのホバークリックの検知</h5>
-          <div class="code" style="width: 600px;">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.btn(0,30,0,15,#000,#000,#000,test,hello,#fff,1,#fff,#fff)
 draw.text.v2(0,0-50,1,#000,m.(test),3)</code></pre>
           </div>
           <p>"m.(id)"で取得できる</p>
-          <div class="code" style="width: 600px;">
+          <div class="code">
             <pre><code class="prettyprint linenums">loop::
 pen.erase()
 draw.btn(0,30,0,15,#000,#fff,#000,test,hello,#fff,1,#000,#fff)
@@ -93,21 +93,21 @@ if(m.(test),=,false)
           </div>
 
           <h3>fill</h3>
-          <div class="code" style="width:600px">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.fill(30,30,0-30,0-30,1,#000,10)
 //draw.fill(x,y,x2,y2,pen-size,color,角)
 //(x / y / x2 / y2) (pen-size pen-color) (s(df))</code></pre>
           </div>
 
           <h3>グラデーション</h3>
-          <div class="code" style="width: 600px;">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.gradation(0-200,100,400,200,0xff,0xff,0xff,0x0,0x0,0x0)
 //draw.gradation(x,y,xs,ys,r1,g1,b1,r2,g2,b2)
 //(x / y / xs / ys) (r1 / g1 / b1 / r2 / g2 / b2)</code></pre>
           </div>
 
           <h3>グラフ</h3>
-          <div class="code" style="width: 700px;">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.graph(1,0-200,0-100,400,200,[0][2][5][3][0],#1d1d1d,#1d1d1d)
 //draw.graph(1,x,y,sx,sy,[data],color,color)
 //(type(only 1)) (x / y) (size-x / size-y) ([data]) (pen-color1 / pen-color2)</code></pre>
@@ -115,7 +115,7 @@ if(m.(test),=,false)
 
           <h3>インプット</h3>
           <h5>type 1</h5>
-          <div class="code" style="width: 600px;">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.input(1,0,0,100,20,100,test,#fff,#000,0x)
 //draw.input(1,x,y,x2,size,max,id,color,color2,0x or "")
 //(1(type)) (x / y / x2) (size) (max) (id) (color1 color2) (0x or "")
@@ -123,37 +123,37 @@ if(m.(test),=,false)
           </div>
           <p>最後の"0x"を消すと枠がなくなる</p>
           <h5>type 2</h5>
-          <div class="code" style="width: 600px;">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.input(2,0,0,0x,30,0x,test,0xff0000,0x00ff00,0x0000ff)
 //draw.input(2,x,y,0x,size,0x,id,color,color2,color3)
 //(2(type)) (x / y) (!x2) (s) (!max) (id) (c c2 c3)</code></pre>
           </div>
           <h5>type 3</h5>
-          <div class="code" style="width: 1000px;">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.input(3,100,30,0,5,5,test,#f00,#000,0x,0)
 //draw.input(3,x,y,x2,s,max or infinity,id,box-color,text-color,0x,y2)
 //(3(type)) (x / y / x2) (s) (max or "infinity") (id) (box-color / text-color) (!c3) (y2); x &gt; x2   /   y &gt; y2</code></pre>
           </div>
           <h5>データを取得する</h5>
           <h5>type1</h5>
-          <div class="code" style="width: 600px">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.input(1,0,0,100,20,100,test,#fff,#000,0x)
 say(i.(test))</code></pre>
           </div>
           <h5>type2</h5>
-          <div class="code" style="width: 600px">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.input(2,0,0,0x,30,0x,test,0xff0000,0x00ff00,0x0000ff)
 say(and(i.(test),     ,i.(test,#)))</code></pre>
           </div>
           <h5>type3</h5>
-          <div class="code" style="width: 600px">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.input(3,100,30,0,5,5,test,#f00,#000,0x,0)
 say(i.input(test))</code></pre>
           </div>
           <p>基本"i.(id)"で取得できる</p>
 
           <h3>letter font1(PLTE(Pen Line Text Engine?))</h3>
-          <div class="code" style="width: 600px">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.text(0-200,0,3,#000,hello world!,3)
 //draw.text(x,y,pen-size,color,text,font-size)
 //(x / y) (text-size / color) (text / text-size)</code></pre>
@@ -162,12 +162,12 @@ say(i.input(test))</code></pre>
           <p>対応文字(数字・アルファベット)のみ</p>
           <p>フォント:オリジナル</p>
           <h3>letter font2(PDTE(Pen Dot Text Engine?))</h3>
-          <div class="code" style="width: 600px">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.text.v2(0-240,180,1,#000,人類社会のすべての構成員の固有の,1)
 //draw.text.v2(x,y,pen-size,color,text,font-size)
 //(x / y) (pen-size / color) (text / text-size)</code></pre>
           </div>
-          <div class="item-1 type2" style="max-width: 600px">
+          <div class="item-1 type2">
             <ion-icon name="information-circle"></ion-icon>
             <a href="#" style="text-decoration: none">漢字・カタカナは、フォントの画像ファイルをpythonで解析してるため一部誤っている可能性があります</a>
           </div>
@@ -179,20 +179,20 @@ say(i.input(test))</code></pre>
 
           <h3>プログレスバー</h3>
           <h5>type1</h5>
-          <div class="code" style="width: 650px">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.progressbar(0,0,100,0xff2020,0xffff00,10,100,50,1)
 //draw.progressbar(y,x,x2,color,color2,size,max,now,1)
 //(y / x / x2) (pen-color1 / pen-color2 / pen-size) (max / now) (1(type))</code></pre>
           </div>
           <h5>type2</h5>
-          <div class="code" style="width: 650px">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.progressbar(0,0,1,0xff2020,0xffff00,10,100,50,2)
 //draw.progressbar(y,x,r,color,color2,size,max,now,1)
 //(y / x / r) (pen-color1 / pen-color2 / pen-size) (max now) (2(type))</code></pre>
           </div>
 
           <h3>scroll bar</h3>
-          <div class="code" style="width: 650px">
+          <div class="code">
             <pre><code class="prettyprint linenums">draw.scroll(0,100,0-100,10,#ff3030,#ffff00,#00ffff,test,100)
 //draw.scroll(x,y,y2,pen-size,color,color2,color3,id,max)
 //(x y y2) (pen-size pen-color pen-color2 pen-color3) (id) (max)</code></pre>
@@ -216,7 +216,7 @@ hitbox(100,100,0-100,0-100,0,test)
 //hitbox(x,y,x2,y2,0x,id)
 //(x / y / x2 / y2) (!+-(機能しない)) (id)</code></pre>
           </div>
-          <div class="item-1 type2" style="max-width: 400px">
+          <div class="item-1 type2">
             <ion-icon name="information-circle"></ion-icon>
             <a href="#" style="text-decoration: none">x &gt; x2 y &gt; y2</a>
           </div>

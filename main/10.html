@@ -55,7 +55,7 @@
           <h1>アニメーション</h1>
           <p>イージングとか、あんま使えないかも</p>
           <h3>解説</h3>
-          <div class="code" style="width: 600px">
+          <div class="code">
             <pre><code class="prettyprint linenums">animation(500,300,test1,13,#,1)
 //animation(time-ms,max,id,easing id,easingの計算式の変更,n)
             </code></pre>
@@ -96,7 +96,7 @@
           <p><a href="https://www.geogebra.org/m/bcqhny2b" target="_blank">計算式は、こちら</a></p>
           <p>x座標が時間、y座標が値を表しています</p>
           <p>値が増えるほど急になっていきます</p>
-          <div class="code" style="width: 600px">
+          <div class="code">
             <pre><code class="prettyprint linenums">animation(500,300,test1,easeInOut,5.5,1)
 //animation(time-ms,max,id,easing id,easingの計算式の変更,n)
             </code></pre>
@@ -114,21 +114,21 @@
 
 
           <h3>サンプル</h3>
-          <div class="code" style="width: 600px">
+          <div class="code">
             <pre><code class="prettyprint linenums">loop::
 pen.erase()
 first::
     animation(500,300,test1,13,#,1)
 draw.text.v2(0-340+a.(test1),0,1,#000,こんちゃ,3)</code></pre>
           </div>
-          <div class="code" style="width: 600px">
+          <div class="code">
             <pre><code class="prettyprint linenums">loop::
 pen.erase()
 first::
     animation(500,300,test1,easeOut,6.5,1)
 draw.text.v2(0-340+a.(test1),0,1,#000,こんちゃ,3)</code></pre>
           </div>
-          <div class="item-1 type2" style="max-width: 600px">
+          <div class="item-1 type2">
             <ion-icon name="information-circle"></ion-icon>
             <a href="#" style="text-decoration: none">連続で実行出来ない仕組みにすることをおすすめします<br>サンプルでは一回しか実行出来ないようにしています<br>複数回使う場合などは、if文などを使用してください</a>
           </div>
