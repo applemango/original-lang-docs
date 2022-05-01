@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--icon-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!--code-->
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/arduino-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>-->
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=desert"></script>
+    <!--css-->
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="../item.css">
+    <link rel="stylesheet" href="scpr.css">
+
+    <meta charset="utf-8">
+    <title>docs</title>
+  </head>
+  <body>
+
+    <div id="main">
+      <header>
+        <script>
+          window.onload = function() {document.querySelector("#right").addEventListener('click', open_list_menu_hide);document.querySelector("#right").addEventListener('scroll', open_list_menu_hide);}
+          function open_left_menu() {const menu = document.querySelector("#left");if (menu.className == "open") {menu.classList.remove("open");} else {menu.classList.add("open");}}
+          function open_list_menu_hide() {const menu = document.querySelector("#left");menu.classList.remove("open");}
+        </script>
+        <button class="menu" type="button" onclick="open_left_menu()"></button>
+        <h1><a href="../index.html">SCPR</a></h1>
+      </header>
+      <div id="left">
+      </div>
+      <div id="right">
+        <div id="right-main">
+          
+
+          <div id="right-main-main">
+            <h1>基本</h1>
+            <p>プログラムは[list:#code]に入力します.</p>
+            <p>turbwarpの場合はリストが表示されている状態でテキストファイルをリストに向けてドラッグ・アンド・ドロップできます</p>
+            <div class="item-1 type2">
+              <ion-icon name="information-circle"></ion-icon>
+              <a href="#" style="text-decoration: none">プログラムを変更するときはプログラムを一回停止してください、誤ったプログラムを実行した場合ブログラムが固まる可能性があります</a>
+            </div>
+  
+            <br><h3>基本構文</h3>
+            <div class="code">
+              <pre><code class="prettyprint linenums">name(value,value2)</code></pre>
+            </div>
+            <p>"name"は実行する関数?の名前です</p>
+            <p>"value"は関数に入力する値です,複数の値が必要な場合は、","で区切ります</p>
+  
+            <br><h3>"hello, world!"プログラム</h3>
+            <div class="code">
+              <pre><code class="prettyprint linenums">say.time(hello world!,1)</code></pre>
+            </div>
+  
+            <div class="item-1 type2">
+              <ion-icon name="information-circle"></ion-icon>
+              <a href="#" style="text-decoration: none">","は値の区切りですそのため利用出来ません</a>
+            </div>
+            <div class="item-1 type2">
+              <ion-icon name="information-circle"></ion-icon>
+              <a href="#" style="text-decoration: none">何も表示されない場合は、"show()"を最初に追加してください</a>
+            </div>
+  
+            <p>上のプログラムは"say.time"という名前の関数?を実行してます</p>
+            <p>最初の値は、話す言葉、二つ目の値は、秒数です</p>
+            <p>基本これだけ理解しておけば大丈夫です(多分ね</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <script src="../list_data.js"></script>
+    <script src="../main.js"></script>
+    <script src="../scpr/scpr.js"></script>
+  </body>
+</html>

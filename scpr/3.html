@@ -7,13 +7,15 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <!--code-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/arduino-light.min.css">
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/arduino-light.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <script>hljs.highlightAll();</script>-->
 
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=desert"></script>
     <!--css-->
     <link rel="stylesheet" href="../stylesheet.css">
     <link rel="stylesheet" href="../item.css">
+    <link rel="stylesheet" href="scpr.css">
 
     <meta charset="utf-8">
     <title>docs</title>
@@ -28,38 +30,57 @@
           function open_list_menu_hide() {const menu = document.querySelector("#left");menu.classList.remove("open");}
         </script>
         <button class="menu" type="button" onclick="open_left_menu()"></button>
-        <h1><a href="#">docs</a></h1>
+        <h1><a href="../index.html">SCPR</a></h1>
       </header>
       <div id="left">
       </div>
       <div id="right">
         <div id="right-main">
-
+          
 
           <div id="right-main-main">
-                      <!--<h1>Hello, world!</h1>
-          <div class="code">
-            <div><p>test.py</p></div>
-            <pre><code class="language-python">
-              import random
-              n = int(input("n"))
-              mc = 0
-              for i in range(0,n):
-                  y,x = random.random(),random.random()
-                  if x * x + y * y &lt; 1: mc += 1
-              print("pi=",4*mc/n)
-            </code></pre>
-          </div>-->
-          <a href="./scpr/main.html">SCPR &lt;click me&gt;</a>
-          <p></p>
-          <a href="./sccf/main.html">SCCF &lt;click me&gt;</a>
+            <h1>基本的な機能2</h1>
+            <p>前章は関数本体の説明でしたが今回はvalue用の関数?です</p>
+            <p>これを..以下略</p>
+  
+            <h3>使い方</h3>
+            <div class="code">
+              <pre><code class="prettyprint linenums">say.time(timer(#),1)</code></pre>
+            </div>
+  
+            <p>上のような感じに使います</p>
+            <h3>サンプル</h3>
+            <div class="code">
+              <pre><code class="prettyprint linenums">
+  say.time(timer(#),1)
+  say.time(%(5,2),1)
+  say.time(hex(255),1)
+  say.time(hex.color(13),1)
+  say.time(and(a,b),1)
+  say.time(floor(3.14),1)
+  say.time(abs(0-15),1)
+  say.time(random(0,10),1)
+  say.time(random(0.0,1.0),1)
+  say.time(mouse(x),1)
+  say.time(mouse(y),1)
+  say.time(mouse(distance),1)
+  say.time(mouse(click),1)
+  say.time(my.position.x(#),1)
+  say.time(my.position.y(#),1)
+  say.time(key.pressed(space),1)
+  say.time(key.pressed(a),1)
+  say.time(len(helloworld),1)
+  say.time(time(y),1)
+  say.time(fps(#),1)
+              </code></pre>
+            </div>
           </div>
-
           
         </div>
       </div>
     </div>
     <script src="../list_data.js"></script>
     <script src="../main.js"></script>
+    <script src="../scpr/scpr.js"></script>
   </body>
 </html>

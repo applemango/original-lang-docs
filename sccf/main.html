@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--icon-->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <!--code-->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/arduino-light.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
+        <!--css-->
+        <link rel="stylesheet" href="../stylesheet.css">
+        <link rel="stylesheet" href="../item.css">
+        <link rel="stylesheet" href="../sccf/sccf.css">
+
+        <meta charset="utf-8">
+        <title>docs</title>
+    </head>
+    <body>
+
+        <div id="main">
+            <header>
+                <script>
+                    window.onload = function() {document.querySelector("#right").addEventListener('click', open_list_menu_hide);document.querySelector("#right").addEventListener('scroll', open_list_menu_hide);}
+                    function open_left_menu() {const menu = document.querySelector("#left");if (menu.className == "open") {menu.classList.remove("open");} else {menu.classList.add("open");}}
+                    function open_list_menu_hide() {const menu = document.querySelector("#left");menu.classList.remove("open");}
+                </script>
+                <button class="menu" type="button" onclick="open_left_menu()"></button>
+                <h1><a href="../index.html">SCCF</a></h1>
+            </header>
+            <div id="left">
+            </div>
+            <div id="right">
+                <div id="right-main">
+                    <div id="right-main-main">
+                        <h1>SCCF Documentation</h1>
+                        <h3>初めに</h3>
+                        <p>functionにreturnは無い(つけようと思ったが典型的なスパゲッティコードだった為断念(2週間後))</p>
+                        <p>あとバグが多すぎる</p>
+                        <h3>IDE</h3>
+                        <p><code>Ctrl</code> + <code>Shift</code>keyでconsoleとeditorを行き来できる</p>
+                        <p>editorでコードを書ける[list:##code]に保存される、[list:##code]に直接入力することもできる</p>
+                        <p>consoleで一行だけコードを実行できる</p>
+                        <p><code>main(run)</code>で[list:##code]に書かれたコードを実行できる</p>
+                        <p>editorから行き来した後は消したりできなくなる、適当なコードを実行すると治る</p>
+                        <p>consoleはコードに戻り値がある</p>
+                        <h3>基本</h3>
+
+                        <p>"#"はコメントです必ず最初につけてください</p>
+                        <p>改行やインデントは一部変更することが可能です</p>
+<pre><code>
+#test
+var x = 10
+var y = 50
+if(x==10)
+{
+if(y==50)
+{
+console.log(xは10yは50)
+}
+}
+</code></pre>
+                        <p>上記のコードは以下のように変更できます</p>
+<pre><code>
+var x = 10
+var y = 50
+if((x==10)&&(y==50))){
+    console.log(xは10yは50)
+}
+</code></pre>
+                        <p>更にこのように変更できます</p>
+<pre><code>
+var x = 10;var y = 50;if((x==10)&&(y==50))){console.log(xは10yは50)}
+</code></pre>
+                        <h3>計算</h3>
+                        <p>計算に順序はありません順序をつけたい場合は"(""を使用してください</p>
+                        <p>以下演算子(算術演算子や比較演算子</p>
+<pre><code>
+var x = 2
+var y = 5
+console.log(x+y)
+console.log(x-y)
+console.log(x*y)
+console.log(x/y)
+console.log(x%y)
+console.log(x==y)
+console.log(x&gt;y)
+console.log(x&lt;y)
+console.log(x&gt;=y)
+console.log(x&lt;=y)
+console.log((x==2)&&(y==5))
+console.log((x==2)||(y==10))
+console.log(x!=y)
+console.log(x??y)
+console.log(x&lt;&gt;y)
+console.log(x**y)
+console.log(x in y)
+console.log(x++y)
+console.log(x+++y)
+
+console.log((x+y/2)**2/5+(8+2*x))
+</code></pre>
+                        <h3>基本的な機能</h3>
+
+                        <h3>変数</h3>
+<pre><code>
+var x = 10
+console.log(x)
+var y = [10,80,20,1]
+console.log(y)
+console.log(y[1])
+console.log(x+y[2])
+</code></pre>
+                        <h3>for</h3>
+                        <pre><code>
+for(i,10){
+    console.log(i)
+}
+                        </code></pre>
+
+                        <h3>if</h3>
+                        <pre><code>
+var x = 1
+if(x == 1){
+    console.log("xは1")
+}
+if(x !== 1){
+    console.log("xは1ではない")
+}
+                        </code></pre>
+
+                        <h3>function</h3>
+<pre><code>
+func test(x,y){
+    console.log(x+y)
+}
+test(10,20)
+</code></pre>
+                        <h3>サンプル</h3>
+<pre><code>
+#o(n^2)sort
+var data = [1,5,0,8,2]
+console.log(data)
+for(i,len(data)){
+    for(j,len(data)){
+        if(data[i] &lt; data[j]){
+            var tmp = data[i]
+            data.replace(i,data[j])
+            data.replace(j,tmp)
+        }
+    }
+}
+</code></pre>
+                        <h3>関数リスト</h3>
+<pre><code>
+var value = 10
+var list = [1,2,3,4,5]
+list.append(x)
+list.insert(i,x)
+list.pop(i)
+list.clear()
+list.index(x)
+list.replace(i,x)
+
+console.log(and(aaa,bbb))
+console.log(and`(aaa,bbb))
+console.log(text.n(x,i))
+console.log(len(list))
+console.log(len(hello+++world))
+console.log(aaa)
+sl()
+console.clear()
+del value
+var value = 20
+console.error(Error)
+if(x==10){
+    console.log(x)
+}
+while(value&gt;15){
+    console.log(value)
+    value = value-1
+}
+for(i,len(list)){
+    console.log(list[i])
+}
+go(1)
+func test(x){
+    console.log(x)
+}
+set.on.func(name)
+import(name)
+canvas(true)
+run(main)
+none()
+sleep(seconds)
+move(x,y)
+movex(x)
+movey(y)
+movex.change(x)
+movey.change(y)
+pen.down()
+pen.up()
+pen.erase()
+pen.size()
+pen.color()
+
+var f = input(name)
+timer()
+mouse?()
+key?(key name)
+mouseX()
+mouseY()
+positionX()
+positionY()
+len(data)
+text.n(data,i)
+and(data,data)
+and`(data,data)
+math.pi()
+#円周率は1000桁
+math.abs(data)
+math.acos(data)
+math.asin(data)
+math.atan(data)
+math.cos(data)
+math.sin(data)
+math.tan(data)
+math.floor(data)
+math.log(data)
+math.pow(data,data)
+math.sqrt(data)
+math.random(data,data)
+math.exp(data)
+math.ln()
+</code></pre>
+                        <h3>注意</h3>
+                        <p><code>pow(x,y)</code>と<code>x**y</code>は<code>e^(ln(x)*y)</code>で求めています</p>
+                        <p>その為xが-の場合計算結果が変わります</p>
+                        <p>e^(ln(-5)*2) = 25<br>-5**2 = -25</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../list_data.js"></script>
+        <script src="../main.js"></script>
+        <script src="../sccf/sccf.js"></script>
+    </body>
+</html>

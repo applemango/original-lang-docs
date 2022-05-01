@@ -1,0 +1,145 @@
+/*---------- item-1 style ----------*/
+.item-1 {
+    display: flex;
+    background-color: var(--item-1-color-background);
+    color: var(--item-1-color-text);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 5px;
+    padding-left: 15px;
+    border-left: 5px solid var(--item-1-color);
+    border-radius: 5px;
+    box-shadow: var(--item-1-shadow);
+}
+.item-1 ion-icon {
+    fill: var(--item-1-color);
+    font-size: 18px;
+    position: relative;
+    top: 8px;
+    margin-right: 5px
+}
+.item-1 a, .item-1 p {
+    text-decoration: none;
+    color: var(--item-1-color-text);
+    font-size: 15px;
+    line-height: 2.5;
+}
+.item-1 a:hover {
+    text-decoration: underline;
+}
+/*---------- item-1 style ----------*/
+/*---------- item-1 test ----------*/
+.item-1.type1 {
+    --item-1-color: rgb(30, 127, 232);
+    --item-1-shadow: 0 0px 5px rgba(255, 255, 255, 0.426);
+    --item-1-color-text: #fff;
+    --item-1-color-background: #15141a;
+    /*width: 400px;*/
+}
+
+.item-1.type2 {
+    --item-1-color: rgb(245, 51, 51);
+    --item-1-shadow: 0 0px 5px rgba(0, 0, 0, 0.426);
+    --item-1-color-text: rgb(0, 0, 0);
+    --item-1-color-background: #ffffff;
+    /*width: 240px;*/
+}
+/*---------- item-1 test ----------*/
+
+/*---------- social-1 test ----------*/
+.social-1 ul {
+    font-size: 35px;
+    list-style-type: none;
+    display: flex;
+}
+.social-1 ul li {
+    width: 52px;
+    height: 52px;
+    margin-right: 10px;
+    background-color: red;
+    border-radius: 10px;
+    transition: .3s;
+}
+.social-1 ul li:hover {
+    transform: translateY(-5px)
+}
+.social-1 ul li ion-icon {
+    fill: #fff;
+    position: relative;
+    top: 6.5px;
+    left: 8.5px;
+}
+.social-1 ul li.type-1 {
+    /* github */
+    background-color: #24292f;
+}
+.social-1 ul li.type-2 {
+    /* discord */
+    background-color: #5865F2;
+}
+.social-1 ul li.type-3 {
+    /* twitter */
+    background-color: #1DA1F2;
+}
+/*---------- social-1 test ----------*/
+
+/*---------- code ----------*/
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+    list-style-position: outside;
+    margin-left: 36px;
+    padding-left: 16px;
+}
+.code code {
+    font-size: 14px;
+    line-height: 1.4;
+    overflow: auto;
+    resize: horizontal;
+    font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+.code pre {
+    padding: 15px;
+}
+.code {
+    overflow: auto;
+    background-color: #394034;
+    background-color: #15141a;
+    /*width: 400px;*/
+    /*margin: 40px;*/
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0;
+}
+.code .prettyprint ol.linenums > li {
+    list-style-type: decimal;
+}
+.code pre code ol li {
+    border-left: 2px solid #fff;
+}
+.code::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+.code::-webkit-scrollbar-track {
+    border-radius: 10px;
+    /*box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);*/
+    background-color: transparent;
+}
+.code::-webkit-scrollbar-thumb {
+    background-color: #f1c40f;
+    border-radius: 10px;
+    /*box-shadow:0 0 0 1px rgba(255, 255, 255, .3);*/
+}
+/*---------- code ----------*/
+
+#right-main-main a {
+    text-decoration: underline;
+}
+
+
+ul:not(:is(#left,pre code) ul) {
+    margin-left: 20px;
+}
+ol:not(:is(#left,pre code) ol) {
+    margin-left: 30px;
+}
