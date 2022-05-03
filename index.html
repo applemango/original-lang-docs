@@ -27,7 +27,7 @@
           function open_left_menu() {const menu = document.querySelector("#left");if (menu.className == "open") {menu.classList.remove("open");} else {menu.classList.add("open");}}
           function open_list_menu_hide() {const menu = document.querySelector("#left");menu.classList.remove("open");}
         </script>
-        <button class="menu" type="button" onclick="open_left_menu()"></button>
+        <button class="menu" type="button" onclick="open_left_menu()" style="display:none"></button>
         <h1><a href="#">docs</a></h1>
       </header>
       <div id="left" style="visibility: hidden;">

@@ -38,7 +38,7 @@
                     <div id="right-main-main">
                         <h1>SCCF Documentation</h1>
                         <h3>初めに</h3>
-                        <p>functionにreturnは無い(つけようと思ったが典型的なスパゲッティコードだった為断念(2週間後))</p>
+                        <p>functionにreturnは無い(作り終わった2週間後くらいにつけようと思ったが典型的なスパゲッティコードだった為断念)</p>
                         <p>あとバグが多すぎる</p>
                         <h3>IDE</h3>
                         <p><code>Ctrl</code> + <code>Shift</code>keyでconsoleとeditorを行き来できる</p>
@@ -47,6 +47,7 @@
                         <p><code>main(run)</code>で[list:##code]に書かれたコードを実行できる</p>
                         <p>editorから行き来した後は消したりできなくなる、適当なコードを実行すると治る</p>
                         <p>consoleはコードに戻り値がある</p>
+                        <p><code>system.code.del()</code>でコードを削除できる</p>
                         <h3>基本</h3>
 
                         <p>"#"はコメントです必ず最初につけてください</p>
@@ -154,6 +155,42 @@ for(i,len(data)){
         }
     }
 }
+</code></pre>
+                        <h4>ease</h4>
+<pre><code>
+#ease
+import(ease)
+func start(){
+    movey(0)
+    pen.color(#1d1d1d)
+    pen.size(50)
+    canvas(true)
+}
+func draw(x){
+    pen.erase()
+    movex(x)
+    pen.down()
+    pen.up()
+    none()
+}
+
+func main(){
+    var n = input(Please+++enter+++a+++number:)
+    # 100 &lt; n &lt; 1000
+    start()
+    while(true){
+        for(i,n){
+            ease(i/n,200)
+            draw(result-100)
+        }
+        for(i,n){
+            ease(n-i/n,200)
+            draw(result-100)
+        }
+    }
+}
+
+main()
 </code></pre>
                         <h4>tic toc toe</h4>
 <pre><code>
@@ -323,6 +360,13 @@ func test(x){
 }
 set.on.func(name)
 import(name)
+#importするcodeは[list:#import]に保存されています
+#追加するときはコードを一行に収めてください
+#   @name
+#   code
+#で保存してください
+#   import(name)
+#で呼び出せます
 canvas(true)
 run(main)
 none()
@@ -366,6 +410,10 @@ math.sqrt(data)
 math.random(data,data)
 math.exp(data)
 math.ln()
+math()
+#式が複雑な場合計算結果が狂う時がある(計算をするときの最適化や関数、演算子を計算しないように計算するのを制限しているんだが計算式が複雑になると式が計算しない用の制限に引っかかる場合がある)その時に使う
+#例: (1+8)/2+(4582-1) => math(1+8)/2+math(4582-1)
+#たいていの場合は、必要ありません
 </code></pre>
                         <h3>注意</h3>
                         <p><code>pow(x,y)</code>と<code>x**y</code>は<code>e^(ln(x)*y)</code>で求めています</p>
