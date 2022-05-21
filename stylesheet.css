@@ -199,6 +199,12 @@ summary {
 details summary {
     list-style: none;
 }
+details > summary::after {
+    content: "";
+}
+details > summary::before {
+    content: "";
+}
 details summary::after {
     content: '';
     display: inline-block;
