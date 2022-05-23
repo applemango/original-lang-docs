@@ -97,6 +97,7 @@ header > button.menu {
 .search_box > button.search_btn > ion-icon {
     position: relative;
     top: 2px;
+    color: var(--main-color);
 }
 .search_box > button.search_btn_delete {
     position: absolute;
@@ -116,6 +117,7 @@ header > button.menu {
 .search_box > button.search_btn_delete > ion-icon {
     position: relative;
     top: 2px;
+    color: var(--main-color);
 }
 .search_box > input.search {
     width: 130px;
@@ -201,9 +203,23 @@ details summary {
 }
 details > summary::after {
     content: "";
+    display: none;
 }
 details > summary::before {
     content: "";
+    display: none;
+}
+details > summary::marker {
+    content: "";
+    display: none;
+}
+details > summary::-webkit-details-marker {
+    content: "";
+    display: none;
+}
+details > summary::-moz-details-marker {
+    content: "";
+    display: none;
 }
 details summary::after {
     content: '';
