@@ -160,6 +160,22 @@ for(i,len(data)){
 <pre><code>
 #ease
 import(ease)
+#下importするcode
+#func ease(x,max){
+#    var c1 = 1.70158;
+#    var c2 = c1*1.525;
+#    var c3 = c1 + 1;
+#    if(x&lt;0.5){
+#        var result = math(math.pow(2*x,2)*(math(c2+1)*2*x-c2))/2
+#    };
+#    if(x&gt;0.5){
+#        var result = math((2*x-2)*(2*x-2)*((c2+1)*(x*2-2)+c2)+2)/2
+#    };
+#    if(x==0.5){
+#        var result = math(math.pow(2*x,2)*(math(c2+1)*2*x-c2))/2
+#    };
+#    result = result*max
+#}
 func start(){
     movey(0)
     pen.color(#1d1d1d)
@@ -411,7 +427,7 @@ math.exp(data)
 math.ln()
 math()
 #式が複雑な場合計算結果が狂う時がある(計算をするときの最適化や関数、演算子を計算しないように計算するのを制限しているんだが計算式が複雑になると式が計算しない用の制限に引っかかる場合がある)その時に使う
-#例: (1+8)/2+(4582-1) => math(1+8)/2+math(4582-1)
+#例: (1+8)/2+(4582-1) =&gt; math(1+8)/2+math(4582-1)
 #たいていの場合は、必要ありません
 </code></pre>
                     </div>
