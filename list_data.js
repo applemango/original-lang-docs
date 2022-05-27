@@ -118,6 +118,19 @@ function list_data(){
                 ]
             }
             ,{
+                "type":"ol"
+                ,"title": "Python"
+                ,"search":"python Python"
+                ,"data":[
+                    {
+                        "type":"li"
+                        ,"title": "Python"
+                        ,"url": "../py/main.html"
+                        ,"search": "python Python"
+                    }
+                ]
+            }
+            ,{
                 "type": "li"
                 ,"title": ""
                 ,"url": "#"
